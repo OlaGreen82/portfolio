@@ -193,12 +193,18 @@ p { margin: 0 0 1em; }
 
 .client-list { display: flex; align-items: center; gap: 56px; padding: 0 28px; margin: 0; list-style: none; }
 .client {
-  white-space: nowrap; font-weight: 800; font-size: 1.25rem; color: #7E918C;
-  transition: color .2s;
+  white-space: nowrap; font-weight: 800; font-size: 1.25rem; color: var(--ink);
 }
-.client:hover { color: var(--dewdrop-deep); }
-.client img { height: 40px; width: auto; filter: grayscale(1); opacity: .7; transition: filter .2s, opacity .2s; }
-.client:hover img { filter: none; opacity: 1; }
+.client img { height: 40px; width: auto; }
+.client img[src*="strauss"] { height: 64px; }
+.client img[src*="stratasys"] { height: 60px; }
+.client img[src*="bank-hapoalim"] { height: 26px; }
+.client img[src*="artmedical"] { height: 18px; }
+.client img[src*="urbanica"] { height: 26px; }
+.client img[src*="newdeli"] { height: 26px; }
+.client img[src*="fix.png"] { height: 26px; }
+.client img[src*="carolina-lemke"] { height: 26px; }
+.client img[src*="sodastream"] { height: 60px; }
 
 @keyframes marquee { to { transform: translateX(-50%); } }
 @keyframes marquee-rtl { to { transform: translateX(50%); } }

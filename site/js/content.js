@@ -11,13 +11,26 @@ window.SITE_CONTENT = {
     // International format, digits only (972 = Israel), e.g. 972501234567
     whatsapp: "972545794047",
     cvUrl: "#", // e.g. "files/cv.pdf" once you add it to site/files/
-    portrait: "img/portrait-placeholder.svg",
+    portrait: "img/portrait.webp",
 
-    // Replace with logo images later: { name: "Teva", logo: "img/clients/teva.svg" }
     clients: [
-      { name: "Northwind" }, { name: "Contoso" }, { name: "Fabrikam" }, { name: "Globex" },
-      { name: "Initech" }, { name: "Umbrella Health" }, { name: "Stark Learning" },
-      { name: "Wayne Finance" }, { name: "Acme Corp" }, { name: "Ministry of Education" }
+      { name: "בנק הפועלים", logo: "img/clients/bank-hapoalim.svg" },
+      { name: "שטראוס", logo: "img/clients/strauss.jpg" },
+      { name: "ArtMedical", logo: "img/clients/artmedical.svg" },
+      { name: "בנק דיסקונט", logo: "img/clients/discount-bank.svg" },
+      { name: "הבנק הבינלאומי", logo: "img/clients/fibi.png" },
+      { name: "Campus IL", logo: "img/clients/campus-il.svg" },
+      { name: "טבע", logo: "img/clients/teva.svg" },
+      { name: "SodaStream", logo: "img/clients/sodastream.png" },
+      { name: "Align", logo: "img/clients/align.svg" },
+      { name: "Stratasys", logo: "img/clients/stratasys.png" },
+      { name: "Elbit", logo: "img/clients/elbit.svg" },
+      { name: "Delta", logo: "img/clients/delta.svg" },
+      { name: "Fix", logo: "img/clients/fix.png" },
+      { name: "סבון של פעם", logo: "img/clients/sabon.svg" },
+      { name: "Carolina Lemke", logo: "img/clients/carolina-lemke.png" },
+      { name: "New Deli", logo: "img/clients/newdeli.png" },
+      { name: "Urbanica", logo: "img/clients/urbanica.jpg" }
     ]
   },
 

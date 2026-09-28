@@ -52,3 +52,4 @@ gh run watch (gh run list --limit 1 --json databaseId -q '.[0].databaseId') --ex
 
 - `terraform init/plan/apply` **cannot run locally**: Avast breaks Terraform's localhost gRPC connection to its provider plugin. Let CI run Terraform. Don't change Avast settings; that's the owner's decision.
 - There is no Python or Node on this machine. For a local preview, serve `site/` with any static server (e.g. a small PowerShell `HttpListener` script). Opening `index.html` via `file://` in the preview pane won't load CSS/JS.
+- Keep the local preview server running at all times rather than stopping it after each check — start it once per session and leave it up so the site is always viewable at `http://localhost:8080`.
