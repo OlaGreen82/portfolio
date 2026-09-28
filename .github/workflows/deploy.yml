@@ -1,0 +1,79 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  id-token: write # OIDC token for AWS
+  contents: read
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  AWS_REGION: eu-north-1
+  AWS_ROLE_ARN: arn:aws:iam::831617909795:role/github-actions-portfolio
+  TF_DIR: infra/site
+  SITE_DIR: site
+
+jobs:
+  deploy:
+    name: ${{ github.event_name == 'pull_request' && 'Plan' || 'Plan, apply & publish' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure AWS credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ env.AWS_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_wrapper: false
+
+      - name: Terraform fmt
+        run: terraform fmt -check -recursive infra
+
+      - name: Terraform init
+        working-directory: ${{ env.TF_DIR }}
+        run: terraform init -input=false
+
+      - name: Terraform validate
+        working-directory: ${{ env.TF_DIR }}
+        run: terraform validate
+
+      - name: Terraform plan
+        working-directory: ${{ env.TF_DIR }}
+        run: terraform plan -input=false -out=tfplan
+
+      - name: Terraform apply
+        if: github.event_name != 'pull_request'
+        working-directory: ${{ env.TF_DIR }}
+        run: terraform apply -input=false -auto-approve tfplan
+
+      - name: Publish site to S3
+        if: github.event_name != 'pull_request'
+        run: |
+          BUCKET=$(terraform -chdir=$TF_DIR output -raw bucket_name)
+          # Long-lived cache for static assets, always revalidate HTML.
+          aws s3 sync "$SITE_DIR" "s3://$BUCKET" --delete \
+            --exclude "*.html" \
+            --cache-control "public, max-age=604800"
+          aws s3 sync "$SITE_DIR" "s3://$BUCKET" --delete \
+            --exclude "*" --include "*.html" \
+            --cache-control "public, max-age=0, must-revalidate"
+
+      - name: Invalidate CloudFront cache
+        if: github.event_name != 'pull_request'
+        run: |
+          DIST_ID=$(terraform -chdir=$TF_DIR output -raw distribution_id)
+          aws cloudfront create-invalidation --distribution-id "$DIST_ID" --paths "/*" >/dev/null
+          echo "### Deployed :rocket:" >> "$GITHUB_STEP_SUMMARY"
+          echo "$(terraform -chdir=$TF_DIR output -raw site_url)" >> "$GITHUB_STEP_SUMMARY"

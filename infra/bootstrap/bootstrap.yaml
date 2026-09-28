@@ -1,0 +1,128 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: >-
+  Portfolio one-time bootstrap: Terraform state bucket, GitHub Actions OIDC
+  provider and the IAM role GitHub Actions assumes to deploy the site.
+  Deploy with the AWS CLI - see README.md.
+
+Parameters:
+  GitHubRepo:
+    Type: String
+    Default: OlaGreen82/portfolio
+    Description: GitHub repository (owner/name) allowed to assume the deploy role.
+
+Resources:
+  # ---------------------------------------------------------------------------
+  # Terraform state bucket (native S3 locking; no DynamoDB table needed)
+  # ---------------------------------------------------------------------------
+  StateBucket:
+    Type: AWS::S3::Bucket
+    DeletionPolicy: Retain
+    UpdateReplacePolicy: Retain
+    Properties:
+      BucketName: !Sub portfolio-tfstate-${AWS::AccountId}
+      VersioningConfiguration:
+        Status: Enabled
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      OwnershipControls:
+        Rules:
+          - ObjectOwnership: BucketOwnerEnforced
+      LifecycleConfiguration:
+        Rules:
+          - Id: expire-old-versions
+            Status: Enabled
+            NoncurrentVersionExpiration:
+              NoncurrentDays: 90
+      Tags:
+        - { Key: Project, Value: portfolio }
+
+  StateBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref StateBucket
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Sid: DenyInsecureTransport
+            Effect: Deny
+            Principal: "*"
+            Action: "s3:*"
+            Resource:
+              - !GetAtt StateBucket.Arn
+              - !Sub ${StateBucket.Arn}/*
+            Condition:
+              Bool:
+                aws:SecureTransport: "false"
+
+  # ---------------------------------------------------------------------------
+  # GitHub OIDC
+  # ---------------------------------------------------------------------------
+  GitHubOidcProvider:
+    Type: AWS::IAM::OIDCProvider
+    Properties:
+      Url: https://token.actions.githubusercontent.com
+      ClientIdList:
+        - sts.amazonaws.com
+      Tags:
+        - { Key: Project, Value: portfolio }
+
+  GitHubDeployRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: github-actions-portfolio
+      MaxSessionDuration: 3600
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Federated: !GetAtt GitHubOidcProvider.Arn
+            Action: sts:AssumeRoleWithWebIdentity
+            Condition:
+              StringEquals:
+                token.actions.githubusercontent.com:aud: sts.amazonaws.com
+              # Only the main branch and pull requests of this one repository.
+              StringLike:
+                token.actions.githubusercontent.com:sub:
+                  - !Sub repo:${GitHubRepo}:ref:refs/heads/main
+                  - !Sub repo:${GitHubRepo}:pull_request
+      # Least privilege: only what infra/site and the deploy step need.
+      Policies:
+        - PolicyName: portfolio-deploy
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Sid: TerraformStateList
+                Effect: Allow
+                Action: s3:ListBucket
+                Resource: !GetAtt StateBucket.Arn
+              - Sid: TerraformStateObjects
+                Effect: Allow
+                Action: [s3:GetObject, s3:PutObject, s3:DeleteObject]
+                Resource: !Sub ${StateBucket.Arn}/site/*
+              - Sid: SiteBucket
+                Effect: Allow
+                Action: s3:*
+                Resource:
+                  - !Sub arn:aws:s3:::portfolio-site-${AWS::AccountId}
+                  - !Sub arn:aws:s3:::portfolio-site-${AWS::AccountId}/*
+              - Sid: CloudFront
+                Effect: Allow
+                Action: cloudfront:*
+                Resource: "*"
+      Tags:
+        - { Key: Project, Value: portfolio }
+
+Outputs:
+  StateBucketName:
+    Value: !Ref StateBucket
+  GitHubDeployRoleArn:
+    Description: Role assumed by GitHub Actions via OIDC.
+    Value: !GetAtt GitHubDeployRole.Arn
