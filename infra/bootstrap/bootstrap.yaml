@@ -5,10 +5,13 @@ Description: >-
   Deploy with the AWS CLI - see README.md.
 
 Parameters:
-  GitHubRepo:
+  GitHubSubjectPrefix:
     Type: String
-    Default: OlaGreen82/portfolio
-    Description: GitHub repository (owner/name) allowed to assume the deploy role.
+    # GitHub's immutable OIDC subject: repo:<owner>@<owner-id>/<repo>@<repo-id>.
+    # Pinning the numeric IDs means a renamed or re-created repo can't match.
+    # Check with: gh api repos/OlaGreen82/portfolio/actions/oidc/customization/sub
+    Default: repo:OlaGreen82@334989489/portfolio@1392648597
+    Description: OIDC subject prefix of the repository allowed to assume the deploy role.
 
 Resources:
   # ---------------------------------------------------------------------------
@@ -91,8 +94,8 @@ Resources:
               # Only the main branch and pull requests of this one repository.
               StringLike:
                 token.actions.githubusercontent.com:sub:
-                  - !Sub repo:${GitHubRepo}:ref:refs/heads/main
-                  - !Sub repo:${GitHubRepo}:pull_request
+                  - !Sub ${GitHubSubjectPrefix}:ref:refs/heads/main
+                  - !Sub ${GitHubSubjectPrefix}:pull_request
       # Least privilege: only what infra/site and the deploy step need.
       Policies:
         - PolicyName: portfolio-deploy
