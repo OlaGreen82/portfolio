@@ -9,7 +9,7 @@ window.SITE_CONTENT = {
     email: "hello@example.com",
     linkedin: "https://www.linkedin.com/in/your-profile",
     // International format, digits only (972 = Israel), e.g. 972501234567
-    whatsapp: "972500000000",
+    whatsapp: "972545794047",
     cvUrl: "#", // e.g. "files/cv.pdf" once you add it to site/files/
     portrait: "img/portrait-placeholder.svg",
 
@@ -22,9 +22,9 @@ window.SITE_CONTENT = {
   },
 
   en: {
-    name: "Your Name",
+    name: "Ola Green",
     meta: {
-      title: "Your Name | Senior Instructional Designer",
+      title: "Ola Green | Senior Instructional Designer",
       description: "Senior instructional designer creating learning experiences that connect people, knowledge and technology."
     },
     nav: { projects: "Projects", about: "About", experience: "Experience", contact: "Contact", talk: "Let's talk" },
@@ -89,9 +89,9 @@ window.SITE_CONTENT = {
   },
 
   he: {
-    name: "השם שלך",
+    name: "אולה גרין",
     meta: {
-      title: "השם שלך | מעצבת למידה בכירה",
+      title: "אולה גרין | מעצבת למידה בכירה",
       description: "מעצבת למידה בכירה - חוויות למידה שמחברות בין אנשים, ידע וטכנולוגיה."
     },
     nav: { projects: "פרויקטים", about: "אודות", experience: "ניסיון", contact: "צור קשר", talk: "בואו נדבר" },

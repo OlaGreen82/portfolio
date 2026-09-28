@@ -24,6 +24,10 @@ Live URL: https://drka4duc5eqcu.cloudfront.net
 
 **CI/CD (`.github/workflows/deploy.yml`)**: PR → `terraform fmt -check`, `validate`, `plan`. Push to `main` → apply, `aws s3 sync site/` (HTML/CSS/JS with `max-age=0, must-revalidate`; other files cached 7 days), then CloudFront `/*` invalidation.
 
+## Content editing convention
+
+Whenever a change is made to the English (`en`) content/copy, apply the equivalent change to the Hebrew (`he`) content, and vice versa — unless the user explicitly says otherwise. This keeps `en` and `he` in `site/js/content.js` in sync in both structure and substance.
+
 ## Commands
 
 Local machine quirks: Avast HTTPS scanning intercepts TLS, and tool shells have a stale PATH.
