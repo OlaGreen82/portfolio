@@ -62,12 +62,13 @@ jobs:
         if: github.event_name != 'pull_request'
         run: |
           BUCKET=$(terraform -chdir=$TF_DIR output -raw bucket_name)
-          # Long-lived cache for static assets, always revalidate HTML.
+          # HTML/CSS/JS (incl. content.js) always revalidate so edits show up
+          # immediately; images and other media are cached for a week.
           aws s3 sync "$SITE_DIR" "s3://$BUCKET" --delete \
-            --exclude "*.html" \
+            --exclude "*.html" --exclude "*.css" --exclude "*.js" \
             --cache-control "public, max-age=604800"
           aws s3 sync "$SITE_DIR" "s3://$BUCKET" --delete \
-            --exclude "*" --include "*.html" \
+            --exclude "*" --include "*.html" --include "*.css" --include "*.js" \
             --cache-control "public, max-age=0, must-revalidate"
 
       - name: Invalidate CloudFront cache
