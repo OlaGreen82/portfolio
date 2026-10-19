@@ -14,7 +14,7 @@ Live URL: https://drka4duc5eqcu.cloudfront.net
 - `site/js/content.js` defines `window.SITE_CONTENT` with `shared` (links, clients, portrait, CV URL), `en` and `he`. Every visible string comes from here; `en` and `he` must keep the same shape.
 - `site/index.html` is an empty skeleton. Elements with `data-t="dotted.path"` get text from the active language object; `.js-*` containers are filled by render functions; `.js-whatsapp` / `.js-email` / `.js-linkedin` / `.js-cv` get their `href` from `shared`.
 - `site/js/main.js` renders everything, and re-renders on language switch (sets `<html lang dir>`). Language priority: `?lang=` → localStorage → browser language. Optional fields: project `image`/`link`, client `logo`; the CV button stays hidden while `cvUrl` is `"#"`.
-- `site/css/styles.css`: palette tokens at the top (`--dewdrop` ≈ Pantone 13-5612 TCX "Dewdrops"; the hex is an approximation). Use logical properties (`margin-inline-*`, `inset-inline-*`) so RTL works; RTL-specific overrides use `[dir="rtl"]`.
+- `site/css/styles.css`: palette tokens at the top (`--paper`, `--aqua`, `--seaglass`, `--steel`, `--teal`, ...; taken from the owner's seafoam/jade/steel-blue watercolor reference image). Some gradients use `rgba()` literals of these same colours, so a palette change means updating those too. The look is soft, smooth gradient blends between these colours (hero, portrait halo, about, project cards, contact): the owner explicitly rejected painted "watercolor stain" blots and paper-grain textures, so keep transitions feathered, with no hard-edged shapes or noise filters. `favicon.svg`, the `.logo::before` "OG" monogram and `404.html` hardcode the same colours. Use logical properties (`margin-inline-*`, `inset-inline-*`) so RTL works; RTL-specific overrides use `[dir="rtl"]`.
 
 **Infrastructure** - two layers:
 - `infra/bootstrap/bootstrap.yaml` (CloudFormation stack `portfolio-bootstrap`, deployed manually with the AWS CLI): Terraform state bucket `portfolio-tfstate-831617909795`, GitHub OIDC provider, and role `github-actions-portfolio`. It is CloudFormation rather than Terraform because local Terraform can't run on the owner's machine (see below).
@@ -27,6 +27,13 @@ Live URL: https://drka4duc5eqcu.cloudfront.net
 ## Content editing convention
 
 Whenever a change is made to the English (`en`) content/copy, apply the equivalent change to the Hebrew (`he`) content, and vice versa — unless the user explicitly says otherwise. This keeps `en` and `he` in `site/js/content.js` in sync in both structure and substance.
+
+## Client logo convention
+
+`shared.clients` entries in `site/js/content.js` render as plain text unless they have a `logo: "img/clients/<file>"` (see `renderClients` in `site/js/main.js`). When adding a real logo:
+- Prefer Wikimedia Commons (freely licensed) or the company's own official site. Don't reuse Wikipedia's non-free "fair use" logo files outside Wikipedia — those are restricted to Wikipedia's own use.
+- Some official logos use white/near-white fills meant for a dark header; check the raw file before using it here, since the marquee background is white, and recolor white fills to the site's ink colour if needed.
+- The marquee logo height defaults to 40px (`.client img` in `site/css/styles.css`); individual logos are resized with `.client img[src*="<name>"]` overrides directly below it.
 
 ## Commands
 

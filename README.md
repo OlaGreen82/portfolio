@@ -7,7 +7,7 @@ Static site on **S3 + CloudFront**, infrastructure in **Terraform**, deployed by
 ```
 site/                  the website (HTML/CSS/JS, no build step)
   js/content.js        <- ALL text, links and project data (EN + HE)
-  css/styles.css       styles; brand colour is --dewdrop at the top
+  css/styles.css       styles; watercolor palette tokens at the top
   img/                 portrait and images
 infra/bootstrap/       one-time CloudFormation: TF state bucket, GitHub OIDC, deploy role
 infra/site/            Terraform: private S3 bucket + CloudFront
@@ -35,9 +35,10 @@ the browser language.
 
 ## Colour
 
-Pantone 13-5612 TCX "Dewdrops". Pantone only publishes the exact hex in Pantone
-Connect, so `--dewdrop: #A6D4C9` in `styles.css` is an approximation - replace it
-with the exact value if you have it.
+Taken from a watercolor reference image: seafoam `#BFE3DA`, jade-mint `#8CC9BE`
+and steel blue `#7DA6C4` blended with smooth gradients on cool white `#F8FBFA`;
+deep blue `#22557A` (a hint of green) for buttons, links and the footer.
+Change them in the `:root` block at the top of `styles.css`.
 
 ## How deployment works
 

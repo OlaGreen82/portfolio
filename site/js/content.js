@@ -6,8 +6,8 @@
 
 window.SITE_CONTENT = {
   shared: {
-    email: "hello@example.com",
-    linkedin: "https://www.linkedin.com/in/your-profile",
+    email: "olaber@gmail.com",
+    linkedin: "https://www.linkedin.com/in/ola-green/",
     // International format, digits only (972 = Israel), e.g. 972501234567
     whatsapp: "972545794047",
     cvUrl: "#", // e.g. "files/cv.pdf" once you add it to site/files/
@@ -50,11 +50,6 @@ window.SITE_CONTENT = {
       ctaSecondary: "Get in touch"
     },
     clientsTitle: "Organizations I've worked with",
-    stats: [
-      { value: "15+", label: "Years of experience" },
-      { value: "300+", label: "Learning projects delivered" },
-      { value: "50+", label: "Organizations served" }
-    ],
     projects: {
       title: "Selected projects",
       subtitle: "A sample of learning solutions across industries and formats.",
@@ -117,11 +112,6 @@ window.SITE_CONTENT = {
       ctaSecondary: "בואו נדבר"
     },
     clientsTitle: "ארגונים שעבדתי איתם",
-    stats: [
-      { value: "+15", label: "שנות ניסיון" },
-      { value: "+300", label: "פרויקטי למידה" },
-      { value: "+50", label: "ארגונים" }
-    ],
     projects: {
       title: "פרויקטים נבחרים",
       subtitle: "מבחר פתרונות למידה מתחומים ופורמטים שונים.",

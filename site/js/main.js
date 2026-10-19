@@ -88,17 +88,6 @@
     });
   }
 
-  function renderStats(T) {
-    var box = document.querySelector(".js-stats");
-    box.textContent = "";
-    T.stats.forEach(function (s) {
-      var item = el("div", "stat reveal");
-      item.appendChild(el("span", "stat-value", s.value));
-      item.appendChild(el("span", "stat-label", s.label));
-      box.appendChild(item);
-    });
-  }
-
   function renderProjects(T) {
     var P = T.projects;
     var categories = [];
@@ -184,7 +173,6 @@
     renderStatic(T);
     renderLinks(T);
     renderClients();
-    renderStats(T);
     renderProjects(T);
     renderAbout(T);
     renderExperience(T);
