@@ -69,7 +69,7 @@ window.SITE_CONTENT = {
     about: {
       paragraphs: [
         "I started as an R&D engineer, taking hardware from first sketch to mass production. Today I take complex material, from high-tech and medical devices to industrial tech and finance, and turn it into impactful and measurable learning.",
-        "I always start by asking the right questions, and I listen until I understand what the learners really need. I build real partnerships with my clients, the kind that carry on from one project to the next.",
+        "I always start by asking the right questions, and I listen until I understand what the learners really need. I build real partnerships with my clients, ones that last well beyond a single project.",
         "I'm a lifelong learner, and I build my own AI-powered workflows that allow me to work faster and more efficiently."
       ],
       quote: "The best learning solutions begin with curiosity, genuine listening and a deep understanding of the need.",
