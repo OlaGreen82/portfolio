@@ -47,7 +47,7 @@ window.SITE_CONTENT = {
     hero: {
       eyebrow: "Senior Instructional Designer",
       title: "Designing learning experiences *people actually remember*.",
-      subtitle: "I help organizations turn knowledge into learning that makes a real difference to business results, from discovery and design to e-learning, workshops and digital products.",
+      subtitle: "I help organizations turn knowledge into learning that delivers real business impact, from needs analysis and design to e-learning, workshops and digital products.",
       ctaPrimary: "See my work",
       ctaSecondary: "Get in touch"
     },
