@@ -72,7 +72,6 @@ window.SITE_CONTENT = {
         "I always start by asking the right questions, and I listen until I understand what the learners really need. I build real partnerships with my clients, ones that last well beyond a single project.",
         "I'm a lifelong learner, and I create my own AI-powered workflows that allow me to work faster and more efficiently."
       ],
-      quote: "The best learning solutions begin with curiosity, genuine listening and a deep understanding of the need.",
       cv: "Download CV"
     },
     experience: {
@@ -132,7 +131,6 @@ window.SITE_CONTENT = {
         "כל פרויקט מתחיל אצלי בשאלות הנכונות, בהקשבה אמיתית ובהכרת קהל היעד, עד שאני מבינה מה הלומדים באמת צריכים. אני בונה עם הלקוחות שלי שותפות אמיתית, כזו שממשיכה מפרויקט לפרויקט.",
         "אני לומדת כל הזמן, ומפתחת לעצמי תהליכי עבודה מבוססי AI שמאפשרים לי לעבוד מהר ויעיל יותר."
       ],
-      quote: "פתרונות הלמידה הטובים ביותר מתחילים בסקרנות, בהקשבה אמיתית ובהבנה עמוקה של הצורך.",
       cv: "להורדת קורות חיים"
     },
     experience: {
