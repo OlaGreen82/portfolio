@@ -85,8 +85,8 @@ window.SITE_CONTENT = {
       ]
     },
     contact: {
-      title: "Got all the way down here? Let's talk.",
-      text: "Whether you have a clear brief or just the beginning of an idea, I'd love to hear about it.",
+      title: "Found a connection? Let's talk.",
+      text: "I'm a pretty good listener 😉",
       whatsapp: "WhatsApp",
       email: "Email",
       linkedin: "LinkedIn"
@@ -145,8 +145,8 @@ window.SITE_CONTENT = {
       ]
     },
     contact: {
-      title: "הגעתם עד לכאן? בואו נדבר.",
-      text: "בין אם יש לכם בריף מסודר או רק תחילתו של רעיון - אשמח לשמוע.",
+      title: "מצאתם חיבור? בואו נדבר.",
+      text: "אני מקשיבה די טובה 😉",
       whatsapp: "וואטסאפ",
       email: "אימייל",
       linkedin: "לינקדאין"
