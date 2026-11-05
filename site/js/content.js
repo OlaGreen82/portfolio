@@ -146,7 +146,7 @@ window.SITE_CONTENT = {
     },
     contact: {
       title: "מצאתם חיבור? בואו נדבר.",
-      text: "אני מקשיבה די טובה 😉",
+      text: "אני יודעת להקשיב 😉",
       whatsapp: "וואטסאפ",
       email: "אימייל",
       linkedin: "לינקדאין"
