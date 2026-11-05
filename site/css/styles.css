@@ -421,30 +421,14 @@ p { margin: 0 0 1em; }
 .contact-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
 .contact-card svg { width: 22px; height: 22px; fill: currentColor; }
 
-/* "Got all the way down here? Let's talk": a hand-drawn arrow that draws itself
-   when it scrolls into view, then keeps nudging toward the link */
+/* "Got all the way down here? Let's talk": playful sign-off under the contact cards */
 .scroll-joke {
-  display: flex; align-items: center; justify-content: center; gap: 4px;
+  display: flex; justify-content: center;
   margin: 72px auto 0; padding-inline: 20px; max-width: var(--container);
   font-size: clamp(1.15rem, 2.4vw, 1.5rem); font-weight: 700; color: var(--teal-dark);
-  text-align: start;
+  text-align: center;
 }
 .scroll-joke > span { transform: rotate(-2deg); }
-.scroll-joke-arrow {
-  flex: none; width: clamp(76px, 12vw, 110px); height: auto; margin-top: -28px;
-  fill: none; stroke: var(--teal); stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round;
-}
-[dir="rtl"] .scroll-joke-arrow { transform: scaleX(-1); }
-[dir="rtl"] .scroll-joke > span { transform: rotate(2deg); }
-.scroll-joke-arrow path { stroke-dasharray: 1; stroke-dashoffset: 0; }
-.js .scroll-joke-arrow path { stroke-dashoffset: 1; }
-.js .scroll-joke.is-visible .scroll-joke-line { animation: joke-draw .9s .3s ease-out forwards; }
-.js .scroll-joke.is-visible .scroll-joke-head { animation: joke-draw .25s 1.15s ease-out forwards; }
-.js .scroll-joke.is-visible .scroll-joke-arrow { animation: joke-nudge 1.8s 1.6s ease-in-out infinite; }
-[dir="rtl"].js .scroll-joke.is-visible .scroll-joke-arrow { animation-name: joke-nudge-rtl; }
-@keyframes joke-draw { to { stroke-dashoffset: 0; } }
-@keyframes joke-nudge { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(6px); } }
-@keyframes joke-nudge-rtl { 0%, 100% { transform: scaleX(-1) translateX(0); } 50% { transform: scaleX(-1) translateX(6px); } }
 .scroll-joke-link {
   color: var(--teal); white-space: nowrap;
   text-decoration: underline wavy var(--steel); text-decoration-thickness: 2px; text-underline-offset: 6px;
@@ -468,7 +452,6 @@ p { margin: 0 0 1em; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .js .reveal { opacity: 1; transform: none; }
-  .js .scroll-joke-arrow path { stroke-dashoffset: 0; }
   .intro-inner { transform: none; }
   .marquee-track { flex-wrap: wrap; width: auto; justify-content: center; }
   .client-list[aria-hidden="true"] { display: none; }
