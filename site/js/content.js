@@ -68,7 +68,9 @@ window.SITE_CONTENT = {
     },
     about: {
       paragraphs: [
-        "I started as an R&D engineer, taking hardware from first sketch to mass production. Today I take complex material, from high-tech and medical devices to industrial tech and finance, and turn it into impactful and measurable learning. I always start by asking the right questions, and I listen until I understand what the learners really need. Most of my clients don't stop at one project, because they know that whatever they need, I'll deliver. I'm a lifelong learner, and I'm constantly testing new AI tools to make my work faster and smarter."
+        "I started as an R&D engineer, taking hardware from first sketch to mass production. Today I take complex material, from high-tech and medical devices to industrial tech and finance, and turn it into impactful and measurable learning.",
+        "I always start by asking the right questions, and I listen until I understand what the learners really need. Most of my clients don't stop at one project, because they know that whatever they need, I'll deliver.",
+        "I'm a lifelong learner, and I'm constantly testing new AI tools to make my work faster and smarter."
       ],
       quote: "The best learning solutions begin with curiosity, genuine listening and a deep understanding of the need.",
       cv: "Download CV"
@@ -126,7 +128,9 @@ window.SITE_CONTENT = {
     },
     about: {
       paragraphs: [
-        "את הדרך המקצועית שלי התחלתי כמהנדסת מו״פ, וליוויתי יצירת רכיבי חומרה מהסקיצה הראשונה ועד לייצור. היום אני לוקחת ידע מורכב מכל התחומים - החל מהיי-טק, מוסדות פיננסיים, מכשור רפואי ועד מוסדות קמעונאות וחינוך, והופכת אותו לחומרי למידה שעושים שינוי אמיתי ומדיד. אני תמיד מתחילה בשאלות הנכונות, ומקשיבה עד שאני מבינה מה הלומדים באמת צריכים. הלקוחות שלי יודעים שלכל צורך שיעלה, אמצא את הפתרון. אני לומדת כל הזמן, ומתנסה בכלי AI חדשים כדי לעבוד מהר וחכם יותר."
+        "את הדרך המקצועית שלי התחלתי כמהנדסת מו״פ, וליוויתי יצירת רכיבי חומרה מהסקיצה הראשונה ועד לייצור. היום אני לוקחת ידע מורכב מכל התחומים - החל מהיי-טק, מוסדות פיננסיים, מכשור רפואי ועד מוסדות קמעונאות וחינוך, והופכת אותו לחומרי למידה שעושים שינוי אמיתי ומדיד.",
+        "אני תמיד מתחילה בשאלות הנכונות, ומקשיבה עד שאני מבינה מה הלומדים באמת צריכים. הלקוחות שלי יודעים שלכל צורך שיעלה, אמצא את הפתרון.",
+        "אני לומדת כל הזמן, ומתנסה בכלי AI חדשים כדי לעבוד מהר וחכם יותר."
       ],
       quote: "פתרונות הלמידה הטובים ביותר מתחילים בסקרנות, בהקשבה אמיתית ובהבנה עמוקה של הצורך.",
       cv: "להורדת קורות חיים"
