@@ -70,7 +70,7 @@ window.SITE_CONTENT = {
       paragraphs: [
         "I started as an R&D engineer, taking hardware from first sketch to mass production. Today I turn complex material into impactful and measurable learning across industries as varied as high-tech, finance, medical devices, retail and education.",
         "I always start by asking the right questions, and I listen until I understand what the learners really need. I build real partnerships with my clients, ones that last well beyond a single project.",
-        "I'm a lifelong learner, and I build my own AI-powered workflows that allow me to work faster and more efficiently."
+        "I'm a lifelong learner, and I create my own AI-powered workflows that allow me to work faster and more efficiently."
       ],
       quote: "The best learning solutions begin with curiosity, genuine listening and a deep understanding of the need.",
       cv: "Download CV"
