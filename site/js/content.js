@@ -90,7 +90,6 @@ window.SITE_CONTENT = {
       email: "Email",
       linkedin: "LinkedIn"
     },
-    footer: { rights: "All rights reserved." },
     langToggle: "עברית",
     langToggleLabel: "Switch to Hebrew",
     menu: "Menu"
@@ -149,7 +148,6 @@ window.SITE_CONTENT = {
       email: "אימייל",
       linkedin: "לינקדאין"
     },
-    footer: { rights: "כל הזכויות שמורות." },
     langToggle: "English",
     langToggleLabel: "החלפה לאנגלית",
     menu: "תפריט"
