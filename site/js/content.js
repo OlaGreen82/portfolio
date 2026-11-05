@@ -2,6 +2,8 @@
  * ALL SITE CONTENT LIVES HERE.
  * Edit the text below (English + Hebrew) - no need to touch the HTML.
  * Items under "shared" are the same in both languages.
+ * In the headline (hero.title), words wrapped in *asterisks* get the
+ * highlight colour.
  */
 
 window.SITE_CONTENT = {
@@ -44,7 +46,7 @@ window.SITE_CONTENT = {
     whatsappMessage: "Hi! I saw your portfolio and would love to talk.",
     hero: {
       eyebrow: "Senior Instructional Designer",
-      title: "Designing learning experiences people actually remember.",
+      title: "Designing learning experiences *people actually remember*.",
       subtitle: "I help organizations turn complex knowledge into clear, engaging and measurable learning - from strategy and storyboards to e-learning, workshops and digital products.",
       ctaPrimary: "See my work",
       ctaSecondary: "Get in touch"
@@ -65,7 +67,6 @@ window.SITE_CONTENT = {
       ]
     },
     about: {
-      title: "My learning journey",
       paragraphs: [
         "Placeholder text: for over 15 years I have been designing learning for organizations of every size - from government ministries to fast-growing tech companies.",
         "My approach starts with listening. I work closely with subject-matter experts and learners to understand the real performance need, then design the simplest solution that will make a measurable difference.",
@@ -106,7 +107,7 @@ window.SITE_CONTENT = {
     whatsappMessage: "היי! ראיתי את תיק העבודות שלך ואשמח לדבר.",
     hero: {
       eyebrow: "מעצבת למידה בכירה",
-      title: "מעצבת חוויות למידה שאנשים באמת זוכרים.",
+      title: "מעצבת חוויות למידה *שאנשים באמת זוכרים*.",
       subtitle: "אני עוזרת לארגונים להפוך ידע מורכב ללמידה ברורה, מעניינת ומדידה - מאסטרטגיה ותסריטים ועד לומדות, סדנאות ומוצרים דיגיטליים.",
       ctaPrimary: "לפרויקטים שלי",
       ctaSecondary: "בואו נדבר"
@@ -126,7 +127,6 @@ window.SITE_CONTENT = {
       ]
     },
     about: {
-      title: "מסע הלמידה שלי",
       paragraphs: [
         "טקסט לדוגמה: כבר יותר מ-15 שנה אני מעצבת למידה לארגונים מכל הגדלים - ממשרדי ממשלה ועד חברות טכנולוגיה צומחות.",
         "הגישה שלי מתחילה בהקשבה. אני עובדת צמוד למומחי תוכן וללומדים כדי להבין את הצורך האמיתי, ומעצבת את הפתרון הפשוט ביותר שיוביל לשינוי מדיד.",

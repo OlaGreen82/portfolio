@@ -42,10 +42,21 @@
 
   // ---- rendering -----------------------------------------------------------
 
+  // "plain *highlighted* plain" -> text nodes plus <span class="highlight">
+  function setHighlighted(node, text) {
+    node.textContent = "";
+    text.split("*").forEach(function (part, i) {
+      if (!part) return;
+      node.appendChild(i % 2 ? el("span", "highlight", part) : document.createTextNode(part));
+    });
+  }
+
   function renderStatic(T) {
     each("[data-t]", function (node) {
       var value = get(T, node.getAttribute("data-t"));
-      if (typeof value === "string") node.textContent = value;
+      if (typeof value !== "string") return;
+      if (node.hasAttribute("data-highlight")) setHighlighted(node, value);
+      else node.textContent = value;
     });
   }
 
@@ -223,15 +234,32 @@
     });
   }
 
-  function initHeaderShadow() {
+  // Drives the intro -> About panel transition (--intro-p, 0..1) and keeps the
+  // header hidden while only the name is on screen.
+  function initScroll() {
+    var root = document.documentElement;
     var header = document.querySelector(".site-header");
-    function update() { header.classList.toggle("is-scrolled", window.scrollY > 8); }
-    window.addEventListener("scroll", update, { passive: true });
+    var intro = document.querySelector(".intro");
+    var queued = false;
+
+    function update() {
+      queued = false;
+      var h = intro.offsetHeight || window.innerHeight;
+      var y = window.scrollY;
+      root.style.setProperty("--intro-p", Math.min(1, Math.max(0, y / h)).toFixed(3));
+      header.classList.toggle("is-hidden", y < h * 0.5);
+      header.classList.toggle("is-scrolled", y > h * 0.5);
+    }
+    function queue() {
+      if (!queued) { queued = true; window.requestAnimationFrame(update); }
+    }
+    window.addEventListener("scroll", queue, { passive: true });
+    window.addEventListener("resize", queue);
     update();
   }
 
   document.documentElement.classList.add("js");
   initMenu();
-  initHeaderShadow();
+  initScroll();
   render(initialLang());
 })();
