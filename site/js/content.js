@@ -47,7 +47,7 @@ window.SITE_CONTENT = {
     hero: {
       eyebrow: "Senior Instructional Designer",
       title: "Designing learning experiences *people actually remember*.",
-      subtitle: "I help organizations turn complex knowledge into clear, engaging and measurable learning - from strategy and storyboards to e-learning, workshops and digital products.",
+      subtitle: "I help organizations turn knowledge into learning that delivers real business impact, from needs analysis and learning strategy to e-learning, workshops and digital products.",
       ctaPrimary: "See my work",
       ctaSecondary: "Get in touch"
     },
@@ -68,11 +68,10 @@ window.SITE_CONTENT = {
     },
     about: {
       paragraphs: [
-        "Placeholder text: for over 15 years I have been designing learning for organizations of every size - from government ministries to fast-growing tech companies.",
-        "My approach starts with listening. I work closely with subject-matter experts and learners to understand the real performance need, then design the simplest solution that will make a measurable difference.",
-        "I combine instructional design methodology (ADDIE, SAM, Action Mapping) with visual design, storytelling and emerging technology, including AI."
+        "I started as an R&D engineer, taking hardware from first sketch to mass production. Today I turn complex material into impactful and measurable learning across industries as varied as high-tech, finance, medical devices, retail and education.",
+        "I always start by asking the right questions, and I listen until I understand what the learners really need. I build real partnerships with my clients, ones that last well beyond a single project.",
+        "I'm a lifelong learner, and I create my own AI-powered workflows that allow me to work faster and more efficiently."
       ],
-      quote: "The best learning solutions begin with curiosity, genuine listening and a deep understanding of the need.",
       cv: "Download CV"
     },
     experience: {
@@ -91,7 +90,6 @@ window.SITE_CONTENT = {
       email: "Email",
       linkedin: "LinkedIn"
     },
-    footer: { rights: "All rights reserved." },
     langToggle: "עברית",
     langToggleLabel: "Switch to Hebrew",
     menu: "Menu"
@@ -108,7 +106,7 @@ window.SITE_CONTENT = {
     hero: {
       eyebrow: "מעצבת למידה בכירה",
       title: "מעצבת חוויות למידה *שאנשים באמת זוכרים*.",
-      subtitle: "אני עוזרת לארגונים להפוך ידע מורכב ללמידה ברורה, מעניינת ומדידה - מאסטרטגיה ותסריטים ועד לומדות, סדנאות ומוצרים דיגיטליים.",
+      subtitle: "אני עוזרת לארגונים להפוך ידע ללמידה שבאמת עושה את ההבדל בתוצאות העסקיות - מפיצוח ותכנון ועד לומדות, סדנאות ומוצרים דיגיטליים.",
       ctaPrimary: "לפרויקטים שלי",
       ctaSecondary: "בואו נדבר"
     },
@@ -128,11 +126,10 @@ window.SITE_CONTENT = {
     },
     about: {
       paragraphs: [
-        "טקסט לדוגמה: כבר יותר מ-15 שנה אני מעצבת למידה לארגונים מכל הגדלים - ממשרדי ממשלה ועד חברות טכנולוגיה צומחות.",
-        "הגישה שלי מתחילה בהקשבה. אני עובדת צמוד למומחי תוכן וללומדים כדי להבין את הצורך האמיתי, ומעצבת את הפתרון הפשוט ביותר שיוביל לשינוי מדיד.",
-        "אני משלבת מתודולוגיות עיצוב הדרכה (ADDIE, SAM, Action Mapping) עם עיצוב חזותי, סיפור סיפורים וטכנולוגיות חדשות, כולל AI."
+        "את הדרך המקצועית שלי התחלתי כמהנדסת מו״פ, וליוויתי יצירת רכיבי חומרה מהסקיצה הראשונה ועד לייצור. היום אני הופכת ידע מורכב לחומרי למידה שעושים שינוי אמיתי ומדיד, בתעשיות מגוונות כמו היי-טק, פיננסים, מכשור רפואי, קמעונאות וחינוך.",
+        "כל פרויקט מתחיל אצלי בשאלות הנכונות, בהקשבה אמיתית ובהכרת קהל היעד, עד שאני מבינה מה הלומדים באמת צריכים. אני בונה עם הלקוחות שלי שותפות אמיתית, כזו שממשיכה מפרויקט לפרויקט.",
+        "אני לומדת כל הזמן, ומפתחת לעצמי תהליכי עבודה מבוססי AI שמאפשרים לי לעבוד מהר ויעיל יותר."
       ],
-      quote: "פתרונות הלמידה הטובים ביותר מתחילים בסקרנות, בהקשבה אמיתית ובהבנה עמוקה של הצורך.",
       cv: "להורדת קורות חיים"
     },
     experience: {
@@ -151,7 +148,6 @@ window.SITE_CONTENT = {
       email: "אימייל",
       linkedin: "לינקדאין"
     },
-    footer: { rights: "כל הזכויות שמורות." },
     langToggle: "English",
     langToggleLabel: "החלפה לאנגלית",
     menu: "תפריט"
