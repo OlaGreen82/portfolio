@@ -421,21 +421,6 @@ p { margin: 0 0 1em; }
 .contact-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
 .contact-card svg { width: 22px; height: 22px; fill: currentColor; }
 
-/* "Got all the way down here? Let's talk": playful sign-off under the contact cards */
-.scroll-joke {
-  display: flex; justify-content: center;
-  margin: 72px auto 0; padding-inline: 20px; max-width: var(--container);
-  font-size: clamp(1.15rem, 2.4vw, 1.5rem); font-weight: 700; color: var(--teal-dark);
-  text-align: center;
-}
-.scroll-joke > span { transform: rotate(-2deg); }
-.scroll-joke-link {
-  color: var(--teal); white-space: nowrap;
-  text-decoration: underline wavy var(--steel); text-decoration-thickness: 2px; text-underline-offset: 6px;
-  transition: color .2s;
-}
-.scroll-joke-link:hover, .scroll-joke-link:focus-visible { color: var(--teal-dark); text-decoration-color: var(--teal); }
-
 /* ---- Footer ------------------------------------------------------------- */
 .site-footer { padding: 28px 0; background: var(--teal-dark); color: #D6E4EE; font-size: 0.95rem; }
 .footer-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }

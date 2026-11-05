@@ -85,13 +85,12 @@ window.SITE_CONTENT = {
       ]
     },
     contact: {
-      title: "Found a connection? Let's talk.",
+      title: "Got all the way down here? Let's talk.",
       text: "Whether you have a clear brief or just the beginning of an idea, I'd love to hear about it.",
       whatsapp: "WhatsApp",
       email: "Email",
       linkedin: "LinkedIn"
     },
-    scrollJoke: { lead: "Got all the way down here?", cta: "Let's talk" },
     footer: { rights: "All rights reserved." },
     langToggle: "עברית",
     langToggleLabel: "Switch to Hebrew",
@@ -146,13 +145,12 @@ window.SITE_CONTENT = {
       ]
     },
     contact: {
-      title: "מצאתם חיבור? בואו נדבר.",
+      title: "הגעתם עד לכאן? בואו נדבר.",
       text: "בין אם יש לכם בריף מסודר או רק תחילתו של רעיון - אשמח לשמוע.",
       whatsapp: "וואטסאפ",
       email: "אימייל",
       linkedin: "לינקדאין"
     },
-    scrollJoke: { lead: "הגעתם עד לכאן?", cta: "בואו נדבר" },
     footer: { rights: "כל הזכויות שמורות." },
     langToggle: "English",
     langToggleLabel: "החלפה לאנגלית",
