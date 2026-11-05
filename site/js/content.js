@@ -91,6 +91,7 @@ window.SITE_CONTENT = {
       email: "Email",
       linkedin: "LinkedIn"
     },
+    scrollJoke: { lead: "Got all the way down here?", cta: "Let's talk" },
     footer: { rights: "All rights reserved." },
     langToggle: "עברית",
     langToggleLabel: "Switch to Hebrew",
@@ -151,6 +152,7 @@ window.SITE_CONTENT = {
       email: "אימייל",
       linkedin: "לינקדאין"
     },
+    scrollJoke: { lead: "הגעתם עד לכאן?", cta: "בואו נדבר" },
     footer: { rights: "כל הזכויות שמורות." },
     langToggle: "English",
     langToggleLabel: "החלפה לאנגלית",
