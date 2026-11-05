@@ -47,7 +47,7 @@ window.SITE_CONTENT = {
     hero: {
       eyebrow: "Senior Instructional Designer",
       title: "Designing learning experiences *people actually remember*.",
-      subtitle: "I help organizations turn complex knowledge into clear, engaging and measurable learning - from strategy and storyboards to e-learning, workshops and digital products.",
+      subtitle: "I help organizations turn knowledge into learning people actually use, from strategy and storyboards to e-learning, workshops and digital products.",
       ctaPrimary: "See my work",
       ctaSecondary: "Get in touch"
     },
@@ -108,7 +108,7 @@ window.SITE_CONTENT = {
     hero: {
       eyebrow: "מעצבת למידה בכירה",
       title: "מעצבת חוויות למידה *שאנשים באמת זוכרים*.",
-      subtitle: "אני עוזרת לארגונים להפוך ידע מורכב ללמידה ברורה, מעניינת ומדידה - מאסטרטגיה ותסריטים ועד לומדות, סדנאות ומוצרים דיגיטליים.",
+      subtitle: "אני עוזרת לארגונים להפוך ידע ללמידה שאנשים באמת משתמשים בה - מאסטרטגיה ותסריטים ועד לומדות, סדנאות ומוצרים דיגיטליים.",
       ctaPrimary: "לפרויקטים שלי",
       ctaSecondary: "בואו נדבר"
     },
