@@ -398,7 +398,6 @@ p { margin: 0 0 1em; }
     linear-gradient(180deg, var(--paper), var(--aqua) 45%, var(--seaglass));
 }
 .contact-inner { text-align: center; max-width: 760px; }
-.contact .lead { margin-inline: auto; color: var(--teal-dark); }
 .contact-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin-top: 32px; }
 .contact-card {
   display: inline-flex; align-items: center; gap: 10px;
