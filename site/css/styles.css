@@ -183,6 +183,7 @@ p { margin: 0 0 1em; }
 .intro-inner > * { animation: intro-rise .9s cubic-bezier(.2, .7, .2, 1) both; }
 .intro-rule { animation-delay: .15s !important; }
 .intro-role { animation-delay: .3s !important; }
+.intro-values { animation-delay: .45s !important; }
 
 .intro-name { margin: 0; font-size: clamp(3rem, 11vw, 8rem); line-height: 1; letter-spacing: -0.02em; color: var(--ink); }
 [lang="en"] .intro-name { text-transform: uppercase; }
@@ -195,6 +196,12 @@ p { margin: 0 0 1em; }
   color: var(--ink-muted); letter-spacing: 0.18em; text-transform: uppercase;
 }
 [lang="he"] .intro-role { letter-spacing: 0.04em; }
+.intro-values {
+  margin: 14px 0 0; font-size: clamp(.9rem, 1.8vw, 1.1rem); font-weight: 400;
+  color: var(--ink-muted); letter-spacing: 0.12em; text-transform: uppercase;
+}
+[lang="he"] .intro-values { letter-spacing: 0.02em; }
+.intro-dot { margin-inline: .6em; color: var(--teal); font-weight: 700; }
 
 .scroll-cue {
   position: absolute; bottom: calc(var(--peek) + 80px); left: 50%; width: 40px; height: 40px;
