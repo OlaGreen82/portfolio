@@ -148,6 +148,16 @@
     });
   }
 
+  // words under the role, separated by a mid-height dot (·)
+  function renderValues(T) {
+    var box = document.querySelector(".js-values");
+    box.textContent = "";
+    T.hero.values.forEach(function (word, i) {
+      if (i) box.appendChild(el("span", "intro-dot", "\u00B7"));
+      box.appendChild(el("span", null, word));
+    });
+  }
+
   function renderAbout(T) {
     var box = document.querySelector(".js-about");
     box.textContent = "";
@@ -185,6 +195,7 @@
     renderLinks(T);
     renderClients();
     renderProjects(T);
+    renderValues(T);
     renderAbout(T);
     renderExperience(T);
     observeReveals();

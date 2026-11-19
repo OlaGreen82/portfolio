@@ -46,6 +46,7 @@ window.SITE_CONTENT = {
     whatsappMessage: "Hi! I saw your portfolio and would love to talk.",
     hero: {
       eyebrow: "Learning Engineer",
+      values: ["Listening", "Analysis", "Solution"],
       title: "Designing learning experiences *people actually remember*.",
       subtitle: "I help organizations turn knowledge into learning that delivers real business impact, from needs analysis and learning strategy to e-learning, workshops and digital products.",
       ctaPrimary: "See my work",
@@ -104,6 +105,7 @@ window.SITE_CONTENT = {
     whatsappMessage: "היי! ראיתי את תיק העבודות שלך ואשמח לדבר.",
     hero: {
       eyebrow: "מהנדסת למידה",
+      values: ["הקשבה", "פיצוח", "פיתרון"],
       title: "מעצבת חוויות למידה *שאנשים באמת זוכרים*.",
       subtitle: "אני עוזרת לארגונים להפוך ידע ללמידה שבאמת עושה את ההבדל בתוצאות העסקיות - מפיצוח ותכנון ועד לומדות, סדנאות ומוצרים דיגיטליים.",
       ctaPrimary: "לפרויקטים שלי",
