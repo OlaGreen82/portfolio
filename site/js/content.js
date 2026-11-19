@@ -39,13 +39,13 @@ window.SITE_CONTENT = {
   en: {
     name: "Ola Green",
     meta: {
-      title: "Ola Green | Senior Instructional Designer",
+      title: "Personal Branding",
       description: "Senior instructional designer creating learning experiences that connect people, knowledge and technology."
     },
     nav: { projects: "Projects", about: "About", experience: "Experience", contact: "Contact", talk: "Let's talk" },
     whatsappMessage: "Hi! I saw your portfolio and would love to talk.",
     hero: {
-      eyebrow: "Senior Instructional Designer",
+      eyebrow: "Learning Engineer & AI Builder",
       title: "Designing learning experiences *people actually remember*.",
       subtitle: "I help organizations turn knowledge into learning that delivers real business impact, from needs analysis and learning strategy to e-learning, workshops and digital products.",
       ctaPrimary: "See my work",
@@ -97,13 +97,13 @@ window.SITE_CONTENT = {
   he: {
     name: "אולה גרין",
     meta: {
-      title: "אולה גרין | מעצבת למידה בכירה",
+      title: "מיתוג אישי",
       description: "מעצבת למידה בכירה - חוויות למידה שמחברות בין אנשים, ידע וטכנולוגיה."
     },
     nav: { projects: "פרויקטים", about: "אודות", experience: "ניסיון", contact: "צור קשר", talk: "בואו נדבר" },
     whatsappMessage: "היי! ראיתי את תיק העבודות שלך ואשמח לדבר.",
     hero: {
-      eyebrow: "מעצבת למידה בכירה",
+      eyebrow: "מהנדסת למידה ובילדרית AI",
       title: "מעצבת חוויות למידה *שאנשים באמת זוכרים*.",
       subtitle: "אני עוזרת לארגונים להפוך ידע ללמידה שבאמת עושה את ההבדל בתוצאות העסקיות - מפיצוח ותכנון ועד לומדות, סדנאות ומוצרים דיגיטליים.",
       ctaPrimary: "לפרויקטים שלי",
