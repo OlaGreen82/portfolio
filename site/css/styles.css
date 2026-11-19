@@ -387,7 +387,17 @@ body.modal-open { overflow: hidden; }
 .modal-section h4 { margin: 0 0 6px; color: var(--teal); font-size: 1.05rem; }
 .modal-section p { margin: 0; color: var(--ink-muted); }
 .modal-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; margin-top: 10px; }
-.modal-gallery img { width: 100%; height: auto; display: block; border-radius: 12px; border: 1px solid var(--line); }
+.modal-gallery img { width: 100%; height: auto; display: block; border-radius: 12px; border: 1px solid var(--line); cursor: zoom-in; transition: transform .2s, box-shadow .2s; }
+.modal-gallery img:hover { transform: scale(1.02); box-shadow: var(--shadow-lg); }
+.modal-gallery img:focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; }
+
+.lightbox {
+  width: auto; height: auto; max-width: 96vw; max-height: 96vh; padding: 0; border: 0;
+  background: transparent; overflow: visible;
+}
+.lightbox::backdrop { background: rgba(10, 25, 38, 0.82); }
+.lightbox img { display: block; max-width: 96vw; max-height: 92vh; border-radius: 12px; box-shadow: var(--shadow-lg); }
+.lightbox-close { position: absolute; top: 10px; inset-inline-end: 10px; float: none; margin: 0; background: rgba(255, 255, 255, 0.95); }
 
 .project-body { padding: 22px 24px 26px; }
 .project-body p { color: var(--ink-muted); margin: 0; font-size: 1rem; }

@@ -99,6 +99,28 @@
     });
   }
 
+  // Enlarged picture on top of the project dialog; closes with the X, Esc or a click outside.
+  function openLightbox(src, closeLabel) {
+    var box = document.querySelector(".lightbox");
+    if (!box) {
+      box = el("dialog", "lightbox");
+      box.addEventListener("click", function (e) { if (e.target === box) box.close(); });
+      document.body.appendChild(box);
+    }
+    box.textContent = "";
+    var x = el("button", "modal-close lightbox-close", "×");
+    x.type = "button";
+    x.setAttribute("aria-label", closeLabel);
+    x.addEventListener("click", function () { box.close(); });
+    var img = el("img");
+    img.src = src;
+    img.alt = "";
+    box.appendChild(x);
+    box.appendChild(img);
+    box.showModal();
+    x.focus();
+  }
+
   // Project detail dialog: full text plus every screen from the case study.
   function openProject(P, p) {
     var dlg = document.querySelector(".project-modal");
@@ -141,6 +163,12 @@
         img.src = src;
         img.alt = "";
         img.loading = "lazy";
+        img.tabIndex = 0;
+        img.setAttribute("role", "button");
+        img.addEventListener("click", function () { openLightbox(src, P.close); });
+        img.addEventListener("keydown", function (e) {
+          if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openLightbox(src, P.close); }
+        });
         grid.appendChild(img);
       });
       gal.appendChild(grid);
