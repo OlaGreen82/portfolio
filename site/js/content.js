@@ -42,7 +42,7 @@ window.SITE_CONTENT = {
       title: "Personal Branding",
       description: "Senior instructional designer creating learning experiences that connect people, knowledge and technology."
     },
-    nav: { projects: "Projects", about: "About", experience: "Experience", contact: "Contact", talk: "Let's talk" },
+    nav: { projects: "Projects", about: "About", contact: "Contact", talk: "Let's talk" },
     whatsappMessage: "Hi! I saw your portfolio and would love to talk.",
     hero: {
       eyebrow: "Learning Engineer & AI Builder",
@@ -74,15 +74,6 @@ window.SITE_CONTENT = {
       ],
       cv: "Download CV"
     },
-    experience: {
-      title: "Experience",
-      items: [
-        { period: "2019 - Present", role: "Independent Learning Experience Designer", org: "Freelance", text: "Designing end-to-end learning solutions for enterprise, public-sector and non-profit clients." },
-        { period: "2014 - 2019", role: "Lead Instructional Designer", org: "Company A", text: "Led a team of 6 designers delivering e-learning and blended programs for global clients." },
-        { period: "2011 - 2014", role: "Instructional Designer", org: "Company B", text: "Developed technical training and simulations for complex systems." },
-        { period: "2008 - 2011", role: "Training Coordinator", org: "Company C", text: "Managed internal training programs and the corporate LMS." }
-      ]
-    },
     contact: {
       title: "Got all the way down here? Let's talk.",
       whatsapp: "WhatsApp",
@@ -100,7 +91,7 @@ window.SITE_CONTENT = {
       title: "מיתוג אישי",
       description: "מעצבת למידה בכירה - חוויות למידה שמחברות בין אנשים, ידע וטכנולוגיה."
     },
-    nav: { projects: "פרויקטים", about: "אודות", experience: "ניסיון", contact: "צור קשר", talk: "בואו נדבר" },
+    nav: { projects: "פרויקטים", about: "אודות", contact: "צור קשר", talk: "בואו נדבר" },
     whatsappMessage: "היי! ראיתי את תיק העבודות שלך ואשמח לדבר.",
     hero: {
       eyebrow: "מהנדסת למידה ובילדרית AI",
@@ -114,13 +105,32 @@ window.SITE_CONTENT = {
       title: "פרויקטים נבחרים",
       subtitle: "מבחר פתרונות למידה מתחומים ופורמטים שונים.",
       all: "הכל",
+      more: "לפרטים נוספים",
+      close: "סגירה",
+      labels: { challenge: "האתגר", solution: "הפתרון שלי", role: "התפקיד שלי", result: "מה קיבלנו" },
       items: [
-        { category: "לומדות", title: "תוכנית מודעות לאבטחת מידע ל-8,000 עובדים", summary: "מודולים מבוססי תרחישים עם החלטות מסתעפות ומסלול סיום משחקי." },
-        { category: "קליטת עובדים", title: "מסע קליטה משולב לצוות פיתוח גלובלי", summary: "מסע של 90 יום המשלב מיקרו-למידה, חונכות ומפגשים חיים." },
-        { category: "מנהיגות", title: "מסלול פיתוח למנהלים חדשים", summary: "תוכנית של חצי שנה עם סדנאות, מעגלי קואצ'ינג וסימולציות." },
-        { category: "AI ודיגיטל", title: "עוזר ידע מבוסס AI לטכנאי שטח", summary: "כלי תמיכה בביצועים בממשק שיחה, המבוסס על נהלים קיימים." },
-        { category: "רגולציה", title: "עיצוב מחדש של הדרכות רגולציה לבנק ארצי", summary: "קיצור זמן הלמידה ב-40% לצד שיפור בציוני המבחנים." },
-        { category: "לומדות", title: "אקדמיית ידע מוצר לצוותים מול לקוחות", summary: "ספריית מודולים ב-Storyline ו-Rise עם מרכז עזרים לעבודה." }
+        {
+          category: "לומדות", image: "img/projects/strauss.jpg", title: "שטראוס - הכר את הלקוח",
+          summary: "לומדה אינטראקטיבית שמלמדת צוותי מכירות לזהות את טיפוס הצבע של כל לקוח ולדבר איתו בשפה שלו.",
+          details: {
+            challenge: "בשטראוס יודעים שלקוחות הם טיפוסים שונים, ולכל אחד דרך משלו לתקשר ולקבל החלטות. כדי לבנות קשר מצוין עם הלקוחות, צוותי המכירות צריכים לזהות את הטיפוס שעומד מולם, לפי מודל הצבעים של אריקסון, ולדבר איתם \"בשפה שלהם\", כדי להשיג את תוצאות המכירה הטובות ביותר.",
+            solution: "לומדה אינטראקטיבית שבנויה סביב מודל ארבעת הצבעים (אדום, כחול, צהוב וירוק). הלומדים מכירים את הטיפוסים, עונים על שאלון קצר כדי לגלות מה הטיפוס שלהם, ואז יוצאים לשטח. הם מלווים את איילה, סוכנת מכירות מהצפון, בארבע פגישות עם לקוחות קמעונאיים, כל אחת מטיפוס צבע אחר. בכל פגישה הם בוחרים איך להציג את התכנית המסחרית של החודש, ובסיומה מקבלים סיכום של מה עובד מול הטיפוס הזה. התיאוריה נשארת קצרה, והתרגול בתרחישים הוא העיקר.",
+            role: "ליווי מקצועי מקצה לקצה: עבודה מול אשת התוכן, פענוח התוכן, גיבוש גישת הלמידה, תכנון המבנה המתודולוגי של הלומדה וכתיבת תסריט מפורט (העיצוב הגרפי בוצע על ידי גורם אחר).",
+            result: "לומדה שנותנת לצוותי המכירות שפה משותפת וכלי פשוט לשימוש לפני כל פגישה: לזהות את טיפוס הלקוחות, להיזכר במה חשוב להם ולדבר איתם \"בשפה שלהם\". הלומדה הוטמעה בקרב צוות המכירות."
+          },
+          gallery: ["01", "02", "03", "04", "05", "06", "07", "08", "09"].map(function (n) { return "img/projects/strauss/" + n + ".jpg"; })
+        },
+        {
+          category: "לומדות", image: "img/projects/stratasys.jpg", title: "סטרטסיס - מדיניות נסיעות",
+          summary: "לומדה קצרה עם מיקרו-סרטונים שמראה לעובדים איך מדיניות הנסיעות שומרת עליהם ועל החברה.",
+          details: {
+            challenge: "החברה רצתה להבטיח שהנסיעות של העובדים ייעשו לפי מדיניות החברה, בערוצים המאושרים ובמסגרת התקציב. בפועל נרשמו חריגות בכמה קטגוריות: טיסות, מלונות, הוצאות רכב ועוד. המטרה הייתה להראות לעובדים איך המדיניות משרתת אותם, ולחדד את כללי ההזמנה.",
+            solution: "לומדה קצרה שמשלבת לאורכה מיקרו-סרטונים כדי לעורר עניין ולשמור על תשומת הלב. הלומדה מדגישה שנסיעה לפי כללי החברה שומרת גם על החברה וגם על העובדים עצמם: העובדים מבוטחים וזוכים לשירות סביב השעון, והחברה עומדת בתקציב הדרוש. הלומדה מחולקת לקטגוריות הוצאה (טיסות, מלונות, תחבורה ועוד), ובכל אחת מהן מוצגים הכללים והפירוט שלה.",
+            role: "עבודה מול מומחי התוכן, פיצוח האתגר, כתיבת התסריט ותכנון החלק הגרפי.",
+            result: "לומדה קצרה וממוקדת לעובדים בדרגים שונים בחברה. הלומדה מראה לעובדים איך מדיניות הנסיעות משרתת אותם, ומחדדת את כללי ההזמנה בכל קטגוריית הוצאה."
+          },
+          gallery: ["01", "02", "03", "04", "05", "06", "07"].map(function (n) { return "img/projects/stratasys/" + n + ".jpg"; })
+        }
       ]
     },
     about: {
@@ -130,15 +140,6 @@ window.SITE_CONTENT = {
         "אני לומדת כל הזמן, ומפתחת לעצמי תהליכי עבודה מבוססי AI שמאפשרים לי לעבוד מהר ויעיל יותר."
       ],
       cv: "להורדת קורות חיים"
-    },
-    experience: {
-      title: "ניסיון מקצועי",
-      items: [
-        { period: "2019 - היום", role: "מעצבת חוויות למידה עצמאית", org: "פרילנס", text: "עיצוב פתרונות למידה מקצה לקצה לארגונים, למגזר הציבורי ולעמותות." },
-        { period: "2014 - 2019", role: "ראש צוות עיצוב הדרכה", org: "חברה א'", text: "הובלת צוות של 6 מעצבים בפיתוח לומדות ותוכניות משולבות ללקוחות גלובליים." },
-        { period: "2011 - 2014", role: "מעצבת הדרכה", org: "חברה ב'", text: "פיתוח הדרכות טכניות וסימולציות למערכות מורכבות." },
-        { period: "2008 - 2011", role: "רכזת הדרכה", org: "חברה ג'", text: "ניהול תוכניות הדרכה פנימיות ומערכת ה-LMS הארגונית." }
-      ]
     },
     contact: {
       title: "הגעתם עד לכאן? בואו נדבר.",

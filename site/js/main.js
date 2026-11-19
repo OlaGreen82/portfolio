@@ -99,6 +99,60 @@
     });
   }
 
+  // Project detail dialog: full text plus every screen from the case study.
+  function openProject(P, p) {
+    var dlg = document.querySelector(".project-modal");
+    if (!dlg) {
+      dlg = el("dialog", "project-modal");
+      // A click on the backdrop (the dialog element itself) closes it.
+      dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
+      dlg.addEventListener("close", function () { document.body.classList.remove("modal-open"); });
+      document.body.appendChild(dlg);
+    }
+    dlg.textContent = "";
+    dlg.setAttribute("aria-label", p.title);
+
+    var closeBtn = el("button", "modal-close", "×");
+    closeBtn.type = "button";
+    closeBtn.setAttribute("aria-label", P.close);
+    closeBtn.addEventListener("click", function () { dlg.close(); });
+    dlg.appendChild(closeBtn);
+
+    var inner = el("div", "modal-body");
+    inner.appendChild(el("span", "tag", p.category));
+    inner.appendChild(el("h3", "modal-title", p.title));
+    inner.appendChild(el("p", "modal-lead", p.summary));
+
+    var cols = el("div", "modal-columns");
+    ["challenge", "solution", "role", "result"].forEach(function (key) {
+      if (!p.details[key]) return;
+      var sec = el("section", "modal-section");
+      sec.appendChild(el("h4", null, P.labels[key]));
+      sec.appendChild(el("p", null, p.details[key]));
+      cols.appendChild(sec);
+    });
+    inner.appendChild(cols);
+
+    if (p.gallery && p.gallery.length) {
+      var gal = el("section", "modal-section");
+      var grid = el("div", "modal-gallery");
+      p.gallery.forEach(function (src) {
+        var img = el("img");
+        img.src = src;
+        img.alt = "";
+        img.loading = "lazy";
+        grid.appendChild(img);
+      });
+      gal.appendChild(grid);
+      inner.appendChild(gal);
+    }
+
+    dlg.appendChild(inner);
+    document.body.classList.add("modal-open");
+    dlg.showModal();
+    dlg.scrollTop = 0;
+  }
+
   function renderProjects(T) {
     var P = T.projects;
     var categories = [];
@@ -126,6 +180,15 @@
       if (activeFilter && p.category !== activeFilter) return;
       var card = el(p.link ? "a" : "article", "project-card");
       if (p.link) { card.href = p.link; card.target = "_blank"; card.rel = "noopener"; }
+      if (p.details) {
+        card.classList.add("is-clickable");
+        card.tabIndex = 0;
+        card.setAttribute("role", "button");
+        card.addEventListener("click", function () { openProject(P, p); });
+        card.addEventListener("keydown", function (e) {
+          if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openProject(P, p); }
+        });
+      }
 
       var media = el("div", "project-media tone-" + (i % 4));
       if (p.image) {
@@ -143,6 +206,7 @@
       body.appendChild(el("span", "tag", p.category));
       body.appendChild(el("h3", null, p.title));
       body.appendChild(el("p", null, p.summary));
+      if (p.details) body.appendChild(el("span", "project-more", P.more));
       card.appendChild(body);
       grid.appendChild(card);
     });
@@ -152,20 +216,6 @@
     var box = document.querySelector(".js-about");
     box.textContent = "";
     T.about.paragraphs.forEach(function (text) { box.appendChild(el("p", null, text)); });
-  }
-
-  function renderExperience(T) {
-    var list = document.querySelector(".js-experience");
-    list.textContent = "";
-    T.experience.items.forEach(function (x) {
-      var li = el("li", "timeline-item reveal");
-      li.appendChild(el("span", "timeline-period", x.period));
-      var h = el("h3", null, x.role);
-      h.appendChild(el("span", "timeline-org", " · " + x.org));
-      li.appendChild(h);
-      li.appendChild(el("p", null, x.text));
-      list.appendChild(li);
-    });
   }
 
   function render(lang) {
@@ -186,7 +236,6 @@
     renderClients();
     renderProjects(T);
     renderAbout(T);
-    renderExperience(T);
     observeReveals();
   }
 
