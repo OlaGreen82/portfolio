@@ -56,14 +56,55 @@ window.SITE_CONTENT = {
       title: "Selected projects",
       subtitle: "A sample of learning solutions across industries and formats.",
       all: "All",
-      // Optional per item: image: "img/projects/xyz.jpg", link: "https://..."
+      more: "More details",
+      close: "Close",
+      labels: { challenge: "The challenge", solution: "My solution", role: "My role", result: "The outcome" },
+      // Optional per item: image: "img/projects/xyz.jpg", link: "https://...", details, gallery
       items: [
-        { category: "E-learning", title: "Cyber-security awareness program for 8,000 employees", summary: "Scenario-based modules with branching decisions and a gamified completion path." },
-        { category: "Onboarding", title: "Blended onboarding journey for a global R&D team", summary: "90-day journey combining micro-learning, mentoring and live sessions." },
-        { category: "Leadership", title: "First-time manager development track", summary: "Six-month program with workshops, peer coaching circles and practice simulations." },
-        { category: "AI & Digital", title: "AI-powered knowledge assistant for field technicians", summary: "Conversational performance-support tool built on existing procedures." },
-        { category: "Compliance", title: "Regulatory training redesign for a national bank", summary: "Reduced seat-time by 40% while increasing assessment scores." },
-        { category: "E-learning", title: "Product-knowledge academy for customer-facing teams", summary: "Modular Storyline & Rise library with a searchable job-aid hub." }
+        {
+          category: "E-learning", image: "img/projects/strauss.jpg", title: "Strauss - Know your customer",
+          summary: "An interactive e-learning module that teaches sales teams to recognize each customer's colour type and speak their language.",
+          details: {
+            challenge: "Strauss knows that customers are different types, each with their own way of communicating and making decisions. To build great relationships with customers, sales teams need to recognize the type in front of them, using the Erikson colour model, and speak to them \"in their language\" to get the best sales results.",
+            solution: "An interactive e-learning module built around the four-colour model (red, blue, yellow and green). Learners get to know the types, answer a short questionnaire to discover their own type, and then head into the field. They join Ayala, a sales rep from the north, on four meetings with retail customers, each of a different colour type. In each meeting they choose how to present the month's commercial plan, and at the end they get a summary of what works with that type. The theory stays short; practice through scenarios is the core.",
+            role: "End-to-end professional guidance: working with the content expert, decoding the content, shaping the learning approach, designing the module's methodological structure and writing a detailed script (graphic design was done by someone else).",
+            result: "A module that gives sales teams a shared language and a simple tool to use before every meeting: recognize the customer's type, remember what matters to them and speak to them \"in their language\". The module was rolled out to the sales team."
+          },
+          gallery: ["01", "02", "03", "04", "05", "06", "07", "08", "09"].map(function (n) { return "img/projects/strauss/" + n + ".jpg"; })
+        },
+        {
+          category: "E-learning", image: "img/projects/stratasys.jpg", title: "Stratasys - Travel policy",
+          summary: "A short e-learning module with micro-videos that shows employees how the travel policy protects them and the company.",
+          details: {
+            challenge: "The company wanted employee travel to follow company policy, through approved channels and within budget. In practice there were deviations in several categories: flights, hotels, car expenses and more. The goal was to show employees how the policy serves them, and to sharpen the booking rules.",
+            solution: "A short module with micro-videos woven throughout to spark interest and hold attention. It stresses that travelling by the company's rules protects both the company and the employees themselves: employees are insured and get round-the-clock service, and the company stays on budget. The module is divided into expense categories (flights, hotels, transport and more), each presenting its rules and details.",
+            role: "Working with the subject-matter experts, cracking the challenge, writing the script and planning the visual design.",
+            result: "A short, focused module for employees at every level of the company. It shows employees how the travel policy serves them, and sharpens the booking rules in each expense category."
+          },
+          gallery: ["01", "02", "03", "04", "05", "06", "07"].map(function (n) { return "img/projects/stratasys/" + n + ".jpg"; })
+        },
+        {
+          category: "Videos", image: "img/projects/align.jpg", title: "Align - Motivation video for Ambassadors",
+          summary: "A short animated video that fills ambassadors with pride and motivation to pass on knowledge about a new product in their regions.",
+          details: {
+            challenge: "Align launched a new patented product, and sales teams around the world needed to learn it in order to sell it. A group of ambassadors was chosen from every corner of the world. They came to a conference and then returned to their regions to pass the knowledge on to the rest of the staff. The challenge was to spark motivation and pride: to make clear they were chosen because they are the leading professionals in their field, and that they now represent their region and lead the knowledge transfer.",
+            solution: "A short motivation video created in Vyond. It explains why the ambassadors were chosen, highlights the honour of the role and encourages pride.",
+            role: "The video was part of a complete training program, for which I planned and delivered: working with the subject-matter experts, cracking the challenge, writing the script and planning the visual design.",
+            result: "A short video that raised the chosen ambassadors' motivation to pass on the knowledge in their regions."
+          },
+          gallery: ["01", "02", "03", "04", "05"].map(function (n) { return "img/projects/align/" + n + ".jpg"; })
+        },
+        {
+          category: "Videos", image: "img/projects/strauss-sales.jpg", title: "Strauss - The eight stages of a sales visit",
+          summary: "A library of whiteboard videos that guides field sales reps step by step through a visit to a point of sale.",
+          details: {
+            challenge: "PepsiCo's global eight-stage model describes a successful visit to a point of sale and is used to train field sales reps around the world. The model divides the visit into 8 key stages to maximize the sale. The goal: expand field sales reps' professional toolkit and help them sell as well as possible.",
+            solution: "A library of short whiteboard-style videos that guides field sales reps step by step through the visit to the point of sale. The videos set out the actions and tips that make the most of the reps' selling skills.",
+            role: "End-to-end professional guidance: working with the content expert, decoding the content, shaping the learning strategy, designing the methodological structure and writing detailed scripts.",
+            result: "A series of short videos that teaches, step by step, how to maximize sales at retail points of sale."
+          },
+          gallery: ["01", "02", "03", "04", "05", "06", "07", "08"].map(function (n) { return "img/projects/strauss-sales/" + n + ".jpg"; })
+        }
       ]
     },
     about: {
@@ -130,6 +171,28 @@ window.SITE_CONTENT = {
             result: "לומדה קצרה וממוקדת לעובדים בדרגים שונים בחברה. הלומדה מראה לעובדים איך מדיניות הנסיעות משרתת אותם, ומחדדת את כללי ההזמנה בכל קטגוריית הוצאה."
           },
           gallery: ["01", "02", "03", "04", "05", "06", "07"].map(function (n) { return "img/projects/stratasys/" + n + ".jpg"; })
+        },
+        {
+          category: "סרטונים", image: "img/projects/align.jpg", title: "Align - סרטון מוטיבציה ל-Ambassadors",
+          summary: "סרטון אנימציה קצר שמעורר בשגרירים גאווה ומוטיבציה להעביר את הידע על מוצר חדש באזורים שלהם.",
+          details: {
+            challenge: "Align השיקה מוצר חדש מוגן פטנט, וצוותי המכירות בעולם היו צריכים ללמוד אותו כדי למכור אותו. לצורך כך נבחרה קבוצת שגרירים מכל קצוות העולם. הם הגיעו לכנס, ובתום הכנס חזרו לאזוריהם כדי להעביר את הידע לשאר העובדים. האתגר היה לעורר בהם מוטיבציה ותחושת גאווה: להבהיר שנבחרו כי הם המקצועיים והמובילים בתחומם, ושעכשיו הם מייצגים את האזור שלהם ומובילים את העברת הידע.",
+            solution: "סרטון מוטיבציה קצר, שנוצר ב-Vyond. הסרטון מסביר למה נבחרו השגרירים, מדגיש את הכבוד שבתפקיד ומעודד גאווה.",
+            role: "הסרטון היה חלק ממערך הדרכה שלם, שכלל תכנון וביצוע של: עבודה מול מומחי התוכן, פיצוח האתגר, כתיבת התסריט ותכנון החלק הגרפי.",
+            result: "סרטון קצר שהעלה את המוטיבציה של השגרירים שנבחרו להעביר את הידע באזורים שלהם."
+          },
+          gallery: ["01", "02", "03", "04", "05"].map(function (n) { return "img/projects/align/" + n + ".jpg"; })
+        },
+        {
+          category: "סרטונים", image: "img/projects/strauss-sales.jpg", title: "שטראוס - שמונת שלבי המכירה",
+          summary: "ספריית סרטוני Whiteboard שמלווה את אנשי המכירות בשטח שלב אחר שלב בביקור בנקודת המכירה.",
+          details: {
+            challenge: "מודל שמונת השלבים של פפסיקו העולמית מתאר ביקור מוצלח בנקודת מכירה, ומשמש להכשרת אנשי המכירות בשטח בכל רחבי העולם. המודל מחלק את הביקור ל-8 שלבים משמעותיים, לטובת מקסום המכירה. המטרה: להגדיל את ארגז הכלים המקצועי של אנשי המכירות בשטח ולעזור להם למכור בצורה הטובה ביותר.",
+            solution: "ספריית סרטונים קצרים בסגנון Whiteboard, שמלווה את אנשי המכירות בשטח שלב אחר שלב לאורך הביקור בנקודת המכירה. הסרטונים מפרטים את דרכי הפעולה והטיפים שממקסמים את כישורי המכירה של אנשי המכירות בשטח.",
+            role: "ליווי מקצועי מקצה לקצה: עבודה מול אשת התוכן, פענוח התוכן, גיבוש אסטרטגיית הלמידה, תכנון המבנה המתודולוגי וכתיבת תסריטים מפורטים.",
+            result: "סדרת סרטונים קצרים שמלמדת שלב אחר שלב איך למקסם את המכירה בנקודות הקמעונאיות."
+          },
+          gallery: ["01", "02", "03", "04", "05", "06", "07", "08"].map(function (n) { return "img/projects/strauss-sales/" + n + ".jpg"; })
         }
       ]
     },
